@@ -21,6 +21,9 @@ Next Stage:
 * Permission system for commmunities, files, and users
 * Searching functionality for the communiteis
 
+### Screenshots
+For full screenshots please go to : https://drive.google.com/drive/folders/1Jwuv-Jzx7k77to6C36fDbLS7GQ8MxgJV?usp=sharing
+
 ![image](https://github.com/omaressamheagazy/Secure_community_file_sharing_system/assets/68665060/33f5fb8c-0e17-437e-b53d-3d74ad3f4c0d)
 
 ![image](https://github.com/omaressamheagazy/Secure_community_file_sharing_system/assets/68665060/de585acd-48e8-493a-b4d2-4f013e36297e)
