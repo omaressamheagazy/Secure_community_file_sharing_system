@@ -7,7 +7,7 @@ This repository houses the backend of the Secure Community File Sharing System. 
 
 ## Stage 2
 
-The following tasks have implemented:
+Currently, The following tasks have implemented:
 
 * User autentication (Login and, registration)
 * Community creation 
@@ -20,6 +20,17 @@ Next Stage:
 
 * Permission system for commmunities, files, and users
 * Searching functionality for the communiteis
+
+![image](https://github.com/omaressamheagazy/Secure_community_file_sharing_system/assets/68665060/33f5fb8c-0e17-437e-b53d-3d74ad3f4c0d)
+
+![image](https://github.com/omaressamheagazy/Secure_community_file_sharing_system/assets/68665060/de585acd-48e8-493a-b4d2-4f013e36297e)
+
+![image](https://github.com/omaressamheagazy/Secure_community_file_sharing_system/assets/68665060/f9ced1a6-00b5-479a-bf46-8c00f3e960a5)
+
+![image](https://github.com/omaressamheagazy/Secure_community_file_sharing_system/assets/68665060/a30eac2a-7379-4da3-8a9d-4bf1d6734bc9)
+
+![image](https://github.com/omaressamheagazy/Secure_community_file_sharing_system/assets/68665060/dd0e0300-6e57-40bd-a22f-a898ce34ad79)
+
 
 
 ### Container structures
