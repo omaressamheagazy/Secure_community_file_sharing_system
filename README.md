@@ -4,7 +4,14 @@
 The Secure Community File Sharing System is an application that enables users to share files securely through end-to-end encryption within a community framework. For a comprehensive understanding of the app, you can access the full documentation at: https://drive.google.com/file/d/1H8qEsQAtfuqOBF3hMBXOL0Jo0jI4gw2M/view?usp=sharing
 
 This repository houses the backend of the Secure Community File Sharing System. It acts as an API, providing all the necessary routes for running the application.
+# Technologies used
 
+* Laravel
+* Vue.js
+* postgresql
+* Tailwind CSS
+* Docker
+  
 ## Stage 2
 
 Currently, The following tasks have implemented:
