@@ -1,66 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# API forSecure Community File sharing
 
-## About Laravel
+The Secure Community File Sharing System is an application that enables users to share files securely through end-to-end encryption within a community framework. For a comprehensive understanding of the app, you can access the full documentation at: https://drive.google.com/file/d/1H8qEsQAtfuqOBF3hMBXOL0Jo0jI4gw2M/view?usp=sharing
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This repository houses the backend of the Secure Community File Sharing System. It acts as an API, providing all the necessary routes for running the application.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Stage 2
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The following tasks have implemented:
 
-## Learning Laravel
+* User autentication (Login and, registration)
+* Community creation 
+* Sub-community creation 
+* File uploading 
+* User Request 
+* Adding users to communities 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Next Stage:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* Permission system for commmunities, files, and users
+* Searching functionality for the communiteis
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+### Container structures
+```bash
+├── api
+├── db
+└── pgadmin
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Nginx is also installed in the Dockerfile, serving as the web server for the API
+```
+## Installation
+### backend
+Adjust your .env variables in .env.example, and rename the file to .env
 
-### Premium Partners
+```bash
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+DB_CONNECTION=pgsql
+DB_HOST=db
+DB_PORT=5432
+DB_DATABASE=postgres
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
 
-## Contributing
+SANCTUM_STATEFUL_DOMAINS=localhost:5173
+SPA_URL=http://localhost:5173
+SESSION_DOMAIN=localhost
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+To run the containers, please use the provided Makefile. Run make to see all supported commands.
 
-## Code of Conduct
+```bash
+    Usage:
+      make <target>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    Targets:
+      help        Print help.
+      ps          Show containers.
+      build       Build all containers for DEV
+      build-prod  Build all containers for PROD
+      start       Start all containers
+      fresh       Destroy & recreate all uing dev containers.
+      fresh-prod  Destroy & recreate all using prod containers.
+      stop        Stop all containers
+      restart     Restart all containers
+      destroy     Destroy all containers
+      ssh         SSH into PHP container
+      install     Run composer install
+      migrate     Run migration files
+      migrate-fresh  Clear database and run all migrations
+      tests       Run all tests
+      tests-html  Run tests and generate coverage. Report found in reports/index.html
 
-## Security Vulnerabilities
+To run all containers for local development, run `make fresh`. Otherwise `make fresh-prod` for prod builds.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Default PHP port is configured to 98000. Connect via `http:/localhost:9000` or `http://127.0.0.1:9000`
 
-## License
+Default DB port is 5432.
+```
+#### Development
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+make fresh 
+```
+#### Production
+
+```bash
+fresh-prod 
+```
+### frontend
+
+```bash
+cd frontend
+```
+```bash
+npm install 
+```
+
+```bash
+npm run dev
+```
+
+## Author
+
+- [@omaressamheagazy](https://github.com/omaressamheagazy)
+
