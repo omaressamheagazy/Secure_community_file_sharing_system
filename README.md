@@ -1,8 +1,6 @@
 
 # API forSecure Community File sharing
 
-For a comprehensive understanding of the app, you can access the full documentation at: https://drive.google.com/file/d/1H8qEsQAtfuqOBF3hMBXOL0Jo0jI4gw2M/view?usp=sharing
-
 # Technologies used
 
 * Laravel
